@@ -18,9 +18,10 @@ import android.text.TextWatcher;
 
 public class MainActivity extends AppCompatActivity {
 
-    ;  private ActivityMainBinding binding;
 
-    private PrefDataStore prefdataStore;
+  ;  private ActivityMainBinding binding;
+     private PrefDataStore prefdataStore;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         prefdataStore = PrefDataStore.getInstance(this);
+
         prefdataStore.getString("name").ifPresent(name -> binding.text.setText(name));
+
 
         //チェンジボタン
         //TextView text = findViewById(R.id.text);
